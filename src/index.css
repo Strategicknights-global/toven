@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  /* This sets Poppins as the default sans font */
+  --font-sans: "Poppins", sans-serif; 
+}

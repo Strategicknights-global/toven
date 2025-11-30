@@ -1,0 +1,6 @@
+{
+  "functions": {
+    "source": "src/firestore/triggers",
+    "runtime": "nodejs18"
+  }
+}
