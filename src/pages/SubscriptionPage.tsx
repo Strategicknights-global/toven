@@ -259,12 +259,7 @@ export default function SubscriptionPage() {
                   )}
                 </div>
 
-                {/* Daily Meal Tag */}
-                {card.priceLine && (
-                  <span className="inline-flex bg-white/70 px-3 py-1 rounded-full text-[11px] font-semibold">
-                    {card.priceLine}
-                  </span>
-                )}
+                
 
                 {/* Title */}
                 <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
@@ -274,10 +269,10 @@ export default function SubscriptionPage() {
                   <p className="text-sm sm:text-base">{card.description}</p>
                 )}
 
-                {/* Price */}
-                {card.price && (
-                  <span className="text-lg font-semibold text-slate-900">
-                    {card.price}
+                {/* Daily Meal Tag */}
+                {card.priceLine && (
+                  <span className="inline-flex bg-white/70 px-3 py-1 rounded-full text-[11px] font-semibold">
+                    {card.priceLine}
                   </span>
                 )}
 
