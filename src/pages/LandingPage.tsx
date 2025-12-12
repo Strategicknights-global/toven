@@ -375,13 +375,13 @@ const LandingPage: React.FC = () => {
       <Topbar active="home" variant="landing" />
 
       {/* HERO - Swiggy-like layout with left/right images */}
-      <section className="relative bg-[#5A2D82] text-white overflow-hidden flex items-center justify-center pb-24 sm:pb-32" style={{ minHeight: 'calc(100vh - 4rem)', marginTop: '4rem' }}>
+      <section className="relative bg-[#510088] text-white overflow-hidden flex items-center justify-center pb-24 sm:pb-32" style={{ minHeight: 'calc(100vh - 4rem)', marginTop: '4rem' }}>
         {/* Decorative edge images (visible on all sizes, smaller on mobile) */}
         <img
           src="/banner3.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute top-[5px] left-[-125px] sm:left-[-180px] top-4 w-[200px] sm:w-[360px] md:w-[420px] lg:w-[520px] object-contain drop-shadow-xl lg:left-[-192px]"
+          className="pointer-events-none select-none absolute top-[5px] left-[-120px] sm:left-[-180px] top-4 w-[200px] sm:w-[360px] md:w-[420px] lg:w-[520px] object-contain drop-shadow-xl lg:left-[-192px]"
 
         />
         <img
@@ -390,7 +390,7 @@ const LandingPage: React.FC = () => {
           aria-hidden="true"
           className="
   pointer-events-none select-none absolute 
-  right-[-150px] top-[20px] sm:-right-40 lg:-right-60 
+  right-[-150px] top-[5px] sm:-right-40 lg:-right-60 
   top-10 sm:top-2 lg:top-auto lg:bottom-0 
   w-[240px] sm:w-[300px] md:w-[460px] lg:w-[600px] 
   object-contain drop-shadow-xl rotate-[35deg]
@@ -406,9 +406,14 @@ const LandingPage: React.FC = () => {
               <h1 className="text-xl sm:text-4xl lg:text-6xl font-bold leading-tight mt-4 mb-6 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
                 Beyond Every Bite
               </h1>
-              <p className="text-base sm:text-medium text-purple-100 max-w-md animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
-                Customized to your taste, schedule, and lifestyle.
+              <p
+                className="text-base sm:text-medium text-purple-100 max-w-md animate-fade-in-up text-center sm:text-left"
+                style={{ animationDelay: '0.5s', animationFillMode: 'both' }}
+              >
+                Customized to your taste,<br />
+                schedule and lifestyle.
               </p>
+
               {/* Inline category cards row (max 4) */}
               <div className="mt-6 sm:mt-8 w-full max-w-6xl animate-fade-in-up" style={{ animationDelay: '0.55s', animationFillMode: 'both' }}>
                 <CategoryCardGrid
@@ -433,37 +438,31 @@ const LandingPage: React.FC = () => {
             <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl">
               <div className="relative">
 
-                {/* Background Glow */}
-                <div
-                  className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-r from-amber-400/70 via-white/60 to-purple-500/70 blur-xl opacity-80"
-                  aria-hidden="true"
-                />
-
                 {/* Banner */}
-                <div className="relative rounded-[2.5rem] border border-white/80 bg-gradient-to-r from-amber-50 via-purple-50 to-white px-6 sm:px-12 py-4 sm:py-5 shadow-[0_24px_55px_-25px_rgba(64,0,128,0.7)] overflow-hidden">
+                <div className="relative rounded-[2.5rem] border border-[#510088]/50 bg-gradient-to-r from-[#f3e8ff] via-[#e0c6ff] to-[#f3e8ff] px-6 sm:px-12 py-4 sm:py-5 shadow-[0_24px_55px_-25px_rgba(64,0,128,0.7)] overflow-hidden">
 
                   {/* Single moving line */}
                   <p
-                    className="text-xl sm:text-base md:text-xl font-semibold text-[#5A2D82] tracking-wide whitespace-nowrap"
+                    className="text-xl sm:text-base md:text-xl font-semibold text-[#510088] tracking-wide whitespace-nowrap"
                     style={{
                       animation: "singleMarquee 10s linear infinite",
                     }}
                   >
-                    Breakfast | Lunch | Dinner - 3 Meals at just 159/Day
+                    "Breakfast | lunch | dinner - 3 meals @ just 159/day" No extra delivery charges
                   </p>
 
                   {/* Animation */}
                   <style>
                     {`
-                @keyframes singleMarquee {
-                  0% {
-                    transform: translateX(110%);
-                  }
-                  100% {
-                    transform: translateX(-150%);
-                  }
-                }
-              `}
+                      @keyframes singleMarquee {
+                        0% {
+                          transform: translateX(110%);
+                        }
+                        100% {
+                          transform: translateX(-150%);
+                        }
+                      }
+                    `}
                   </style>
 
                 </div>
@@ -477,13 +476,24 @@ const LandingPage: React.FC = () => {
       {/* PRODUCT CARDS moved into hero */}
 
       {/* OFFERS BANNER */}
-      <section className="bg-[#F7FBF9] py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <h2 className="text-center font-semibold text-2xl sm:text-3xl mb-10">Our Exciting Offers</h2>
-          <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-15" />
+      <section className="bg-[#F7FBF9] py-16 mt-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <h2 className="text-center font-semibold text-2xl sm:text-3xl mt-0 mb-10">
+            Our Exciting <span className="text-[#510088]">Offers</span>
+          </h2>
+          <img
+            src="/line.png"
+            alt="Curved underline"
+            className="mx-auto w-32 -mt-15"
+          />
+
+          {/* Carousel */}
           <div className="relative">
             <div
-              className={`overflow-hidden aspect-[16/9] rounded-xl select-none ${slideCount > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
+              className={`overflow-hidden aspect-[16/9] rounded-xl select-none ${
+                slideCount > 1 ? "cursor-grab active:cursor-grabbing" : "cursor-default"
+              }`}
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
@@ -504,28 +514,50 @@ const LandingPage: React.FC = () => {
                 ))}
               </div>
             </div>
+
+            {/* Carousel Dots */}
             <div className="flex justify-center mt-4 space-x-2">
               {carouselItems.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-[#6a0dad]' : 'bg-gray-300'}`}
+                  className={`w-3 h-3 rounded-full ${
+                    index === currentSlide ? "bg-[#510088]" : "bg-gray-300"
+                  }`}
                   disabled={index === currentSlide}
                 ></button>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Auto slide script */}
+        <script>
+          {`
+            let autoSlide = setInterval(() => {
+              const slides = document.querySelectorAll('.carousel img');
+              let current = document.querySelector('.carousel img.active');
+              let next = current.nextElementSibling || slides[0];
+              current.classList.remove('active');
+              next.classList.add('active');
+            }, 5000);
+          `}
+        </script>
       </section>
 
+
       {/* WHY CHOOSE US */}
-      <section className="relative pt-1 pb-16 bg-[#F7FBF9]">
+      <section className="relative pt-1 pb-16 bg-[#F7FBF9] ">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="tracking-wide font-semibold text-2xl sm:text-3xl text-gray-800">
-              Why <span className="text-[#5A2D82]">Choose</span> Us?
+              Why <span className="text-[#510088]">Choose</span> Us?
             </h2>
-            <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-7" />
+            <img
+              src="/line.png"
+              alt="Curved underline"
+              className="mx-auto w-32 -mt-7"
+            />
           </div>
           {/* Unified responsive layout */}
           <div className="relative mx-auto w-full" style={{ maxWidth: 'min(880px, 100%)', height: 'clamp(26rem, 60vw, 520px)' }}>
@@ -542,7 +574,7 @@ const LandingPage: React.FC = () => {
             </div>
             {/* Cards */}
             <div
-              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#5A2D82]"
+              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#510088]"
               style={{
                 top: 'clamp(-1rem, -3vw, 0rem)',
                 left: 'clamp(0.5rem, 5vw, 7rem)',
@@ -555,7 +587,7 @@ const LandingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">{WHY_CHOOSE_US_ITEMS[0].description}</p>
             </div>
             <div
-              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#5A2D82]"
+              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#510088]"
               style={{
                 top: '65%',
                 left: 'clamp(1.5rem, 1vw, 2rem)',
@@ -569,7 +601,7 @@ const LandingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">{WHY_CHOOSE_US_ITEMS[1].description}</p>
             </div>
             <div
-              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#5A2D82]"
+              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#510088]"
               style={{
                 top: 'clamp(-0.5rem, -2vw, 0.5rem)',
                 right: 'clamp(0.5rem, 5vw, 7rem)',
@@ -582,7 +614,7 @@ const LandingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">{WHY_CHOOSE_US_ITEMS[2].description}</p>
             </div>
             <div
-              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#5A2D82]"
+              className="absolute bg-[#E6E6FA] rounded-2xl shadow-xl animate-[bobCard_6s_ease-in-out_infinite] border-4 border-[#510088]"
               style={{
                 bottom: 'clamp(0.5rem, -2vw, 2rem)',
                 right: 'clamp(0.5rem, 5vw, 4rem)',
@@ -606,7 +638,7 @@ const LandingPage: React.FC = () => {
                 <GraduationCap className="h-6 w-6" aria-hidden />
               </span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#7a4fff]">Student benefit</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#510088]">Student benefit</p>
                 <p className="text-2xl font-bold">
                   Verified students get {studentDiscountLabel} off every subscription cycle
                 </p>
@@ -632,7 +664,7 @@ const LandingPage: React.FC = () => {
       )}
 
       {/* STEPS TO ORDER - Redesigned with awesome animations */}
-      <section className="relative bg-white pt-24 overflow-hidden">
+      <section className="relative bg-white pt-12 overflow-hidden mt-4">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl animate-pulse" />
@@ -644,7 +676,7 @@ const LandingPage: React.FC = () => {
           <div className="text-center mb-20">
             <div className="inline-block">
               <h2 className="text-3xl sm:text-3xl font-bold text-gray-900 mb-4">
-                Steps to <span className="text-[#5A2D82]">Order</span>
+                Steps to <span className="text-[#510088]">Order</span>
               </h2>
               <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-11" />
             </div>
@@ -657,7 +689,7 @@ const LandingPage: React.FC = () => {
           <div className="relative">
             {/* Connecting Line - Desktop only */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2">
-              <div className="sticky top-1/2 h-full bg-gradient-to-b from-purple-200 via-purple-300 to-purple-200 rounded-full" />
+              <div className="sticky top-1/2 h-full bg-gradient-to-b from-[#510088]/20 via-[#510088]/40 to-[#510088]/20 rounded-full" />
             </div>
 
             {/* Steps */}
@@ -668,24 +700,24 @@ const LandingPage: React.FC = () => {
                   title: 'Choose Your Meal',
                   description: 'Browse our diverse menu featuring homemade quality dishes. Filter by dietary preferences, cuisine type, or let our chef\'s recommendations guide you.',
                   image: '/step1.webp',
-                  color: 'from-purple-500 to-purple-700',
-                  accentColor: '#5A2D82',
+                  color: 'from-[#510088] to-[#6A00A8]',
+                  accentColor: '#510088',
                 },
                 {
                   number: '02',
                   title: 'Customize Your Plan',
                   description: 'Select your preferred meal combo, set delivery dates, and adjust portions. Our flexible scheduling ensures meals arrive exactly when you need them.',
                   image: '/step2.webp',
-                  color: 'from-purple-600 to-purple-800',
-                  accentColor: '#502883',
+                  color: 'from-[#510088] to-[#6A00A8]',
+                  accentColor: '#510088',
                 },
                 {
                   number: '03',
                   title: 'Enjoy Fresh Delivery',
                   description: 'Relax as your freshly prepared meals are delivered hot to your doorstep. Track your order in real-time and enjoy restaurant-quality food at home.',
                   image: '/step3.webp',
-                  color: 'from-purple-500 to-purple-700',
-                  accentColor: '#502883',
+                  color: 'from-[#510088] to-[#6A00A8]',
+                  accentColor: '#510088',
                 },
               ].map((step, index) => {
                 const isEven = index % 2 === 1;
@@ -843,16 +875,16 @@ const LandingPage: React.FC = () => {
 
           {/* FAQ Section */}
           {config?.faqs && config.faqs.length > 0 && (
-            <div className="mt-32">
+            <div className="mt-25">
               <div className="text-center mb-16">
                 <h2
-                  className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"
+                  className="text-3xl sm:text-3xl font-bold text-gray-900 mb-4"
                   style={{
                     animation: 'fadeInUp 0.8s ease-out forwards',
                     opacity: 0,
                   }}
                 >
-                  Frequently Asked Questions
+                  Frequently Asked <span className="text-[#510088]">Questions</span>
                 </h2>
                 <p
                   className="text-lg text-gray-600 max-w-2xl mx-auto"
@@ -884,7 +916,7 @@ const LandingPage: React.FC = () => {
                     >
                       <span className="text-lg font-semibold text-gray-900">{faq.question}</span>
                       <ChevronDown
-                        className={`h-5 w-5 text-[#502883] flex-shrink-0 transition-transform duration-300 ${expandedFaqIndex === index ? 'rotate-180' : ''
+                        className={`h-5 w-5 text-[#510088] flex-shrink-0 transition-transform duration-300 ${expandedFaqIndex === index ? 'rotate-180' : ''
                           }`}
                       />
                     </button>

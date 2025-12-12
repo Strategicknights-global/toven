@@ -432,29 +432,29 @@ const AddonsPage: React.FC = () => {
                     <span className={`font-semibold ${isVeg ? "text-[#510088]" : "text-slate-700"}`}>
                       Veg
                     </span>
+
                     {/* Toggle container */}
                     <div
                       onClick={() => setIsVeg(!isVeg)}
-                      className={`
-            relative w-15 h-9 rounded-full cursor-pointer transition-all
-            ${isVeg ? "bg-white border border-[#510088]" : "bg-[#510088]"}
-          `}
+                      className={`relative w-15 h-9 rounded-full cursor-pointer transition-all border ${
+                        isVeg ? "bg-green-500 border-green-600" : "bg-red-500 border-red-600"
+                      }`}
                     >
                       {/* Sliding Knob */}
                       <div
-                        className={`
-              absolute top-1 left-1 w-7 h-7 rounded-full bg-orange-500 
-              transition-all duration-300
-              ${isVeg ? "translate-x-0" : "translate-x-6"}
-            `}
+                        className={`absolute top-1 left-1 w-7 h-7 rounded-full bg-white transition-all duration-300 ${
+                          isVeg ? "translate-x-0" : "translate-x-6"
+                        }`}
                       ></div>
                     </div>
+
                     {/* Right label */}
                     <span className={`font-semibold ${!isVeg ? "text-[#510088]" : "text-slate-700"}`}>
                       Non-Veg
                     </span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -497,10 +497,14 @@ const AddonsPage: React.FC = () => {
                       <div className="flex items-center gap-4">
                         {/* Veg / Non-Veg Badge */}
                         {category.name === 'Veg' ? (
-                          <span className="inline-flex items-center gap-1 rounded-full border border-green-600 px-3 py-1 text-xs font-semibold text-green-600">
-                            <span className="h-2 w-2 rounded-full bg-green-500" />
-                            VEG
-                          </span>
+                          <div className="flex gap-2">
+                            {['Main Course', 'Starters', 'Salads'].map((item) => (
+                              <span key={item} className="inline-flex items-center gap-1 rounded-full border border-green-600 px-3 py-1 text-xs font-semibold text-green-600">
+                                <span className="h-2 w-2 rounded-full bg-green-500" />
+                                {item}
+                              </span>
+                            ))}
+                          </div>
                         ) : (
                           <span className="inline-flex items-center gap-1 rounded-full border border-red-500 px-3 py-1 text-xs font-semibold text-red-600">
                             <span className="h-2 w-2 rounded-full bg-red-500" />
@@ -510,7 +514,7 @@ const AddonsPage: React.FC = () => {
                       </div>
 
                     </div>
-                    <span className="text-xs font-medium uppercase tracking-wide text-slate-400">{addons.length} add-ons</span>
+                    <span className="text-xs font-medium uppercase tracking-wide text-slate-400 mt-3">{addons.length} add-ons</span>
                   </div>
                   <div className="relative">
                     <div className="overflow-x-auto pb-4">
@@ -555,7 +559,7 @@ const AddonsPage: React.FC = () => {
                                     </h4>
 
                                     {/* Coins Box */}
-                                    <div className="mt-2 flex items-center gap-2">
+                                    <div className="mt-2 flex items-center justify-between">
                                       <span className="flex items-center gap-1 rounded-lg border border-yellow-400 bg-yellow-50 px-3 py-1 text-sm font-semibold text-yellow-700 text-center">
                                         {addon.coins} Coins
                                       </span>
@@ -563,6 +567,7 @@ const AddonsPage: React.FC = () => {
                                         Earn 5 coins
                                       </span>
                                     </div>
+
 
                                     <div className='mt-3 font-semibold text-sm text-gray-600'>
                                       Quantity: {quantity}
@@ -615,7 +620,7 @@ const AddonsPage: React.FC = () => {
 
                                   {/* Delivery Info */}
                                   <p className="text-center text-xs font-medium uppercase tracking-wide text-slate-400 mt-1">
-                                    Delivery · {nextDeliveryLabel}
+                                    Delivery · <span className="text-slate-900">{nextDeliveryLabel}</span>
                                   </p>
 
                                 </div>

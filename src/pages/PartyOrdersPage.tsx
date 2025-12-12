@@ -62,7 +62,7 @@ const PartyOrdersPage: React.FC = () => {
             data-animate
             style={{ animationDelay: "0.22s", animationFillMode: "both" }}
           >
-            “Turn every celebration into flavourful memory – without the kitchen stress”<br></br>
+            “<span className="font-bold">Turn every celebration into flavourful memory</span><br />– without the kitchen stress”<br></br>
             We prepare, pack, and deliver with precision, so every guest is served perfectly.<br></br>
             All you need to do is celebrate — TOVEN takes care of the rest.
 

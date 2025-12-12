@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ROUTES } from '../AppRoutes';
 import { useSignupModalStore } from '../stores/signupModalStore';
 import { useUserRoleStore } from '../stores/userRoleStore';
-import { Menu, X, Calendar, Sparkles, Package } from 'lucide-react';
+import { Menu, X, Calendar, Gift, BoxIcon } from 'lucide-react';
 
 interface TopbarProps {
   active?: string;
@@ -28,21 +28,23 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
     return '';
   }, [active, pathname]);
 
-  const items: { label: string; to?: string; highlighted?: boolean; icon?: React.ReactNode; }[] = [
+
+
+  const items: { label: string; to?: string; highlighted?: boolean; icon?: React.ReactNode }[] = [
     { label: 'Home', to: ROUTES.ROOT },
     { label: 'About', to: ROUTES.ABOUT },
     { label: 'Contact', to: '/contact' },
     { label: 'Subscription', to: ROUTES.SUBSCRIPTION, highlighted: true, icon: <Calendar className="h-4 w-4" /> },
-    { label: 'Addon', to: ROUTES.ADDONS, highlighted: true, icon: <Package className="h-4 w-4" /> },
-    { label: 'Party Order', to: ROUTES.PARTY_ORDERS, highlighted: true, icon: <Sparkles className="h-4 w-4" /> },
+    { label: 'Addon', to: ROUTES.ADDONS, highlighted: true, icon: <BoxIcon className="h-4 w-4" /> },
+    { label: 'Party Order', to: ROUTES.PARTY_ORDERS, highlighted: true, icon: <Gift className="h-4 w-4" /> },
   ];
+
 
   React.useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
   const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
-
   const handleAuthClick = () => {
     setMobileOpen(false);
     openSignup();
@@ -62,7 +64,7 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
           aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
           aria-expanded={mobileOpen}
           onClick={toggleMobileMenu}
-          className="inline-flex items-center justify-center rounded-full border border-purple-100 bg-white p-2 text-[#6a0dad] shadow-sm transition hover:border-purple-200 hover:text-purple-800 md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-purple-100 bg-white p-2 text-[#510088] shadow-sm transition hover:border-purple-200 hover:text-purple-800 md:hidden"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -74,9 +76,7 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
             const isActive = pathActive || item.label === derivedActive;
 
             if (item.highlighted) {
-              // Cadbury fixed color style
               const highlightedClasses = 'bg-[#5A2D82] border border-[#3D1A5F] text-white shadow-md';
-
               return (
                 <Link
                   key={item.label}
@@ -89,16 +89,13 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
               );
             }
 
-            // Regular navigation items
-            const baseClasses = 'relative px-4 py-2 transition-colors after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#6a0dad] after:w-0 after:origin-left after:transition-all after:duration-300 after:ease-out hover:after:w-full';
+            const baseClasses = 'relative px-4 py-2 transition-colors after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#510088] after:w-0 after:origin-left after:transition-all after:duration-300 after:ease-out hover:after:w-full';
             const activeClasses = isActive
-              ? 'text-[#6a0dad] font-semibold after:w-full'
-              : 'text-gray-700 hover:text-[#6a0dad]';
+              ? 'text-[#510088] font-semibold after:w-full'
+              : 'text-[#510088] hover:text-[#3d006d]';
             const className = `${baseClasses} ${activeClasses}`;
 
-            if (!item.to) {
-              return <button key={item.label} className={className}>{item.label}</button>;
-            }
+            if (!item.to) return <button key={item.label} className={className}>{item.label}</button>;
             return <Link key={item.label} to={item.to} className={className}>{item.label}</Link>;
           })}
 
@@ -114,7 +111,6 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
             <button
               onClick={openSignup}
               className="rounded-full border border-[#5A2D82] px-5 py-2 text-center text-medium font-semibold text-[#5A2D82] bg-transparent"
-
             >
               Login
             </button>
@@ -126,17 +122,16 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
       {mobileOpen && (
         <div className="md:hidden">
           <div className="absolute inset-x-0 top-16 border-b border-purple-100 bg-white/98 backdrop-blur shadow-lg">
-            <div className="mx-auto max-w-7xl space-y-2 px-6 pb-6 pt-4 text-sm font-medium text-gray-700">
+            <div className="mx-auto max-w-7xl space-y-2 px-6 pb-6 pt-4 text-sm font-medium text-[#510088]">
               {/* Regular nav items */}
               {items.filter(item => !item.highlighted).map((item) => {
                 if (!item.to) return null;
                 const isActive = item.label === derivedActive;
-
                 return (
                   <Link
                     key={item.label}
                     to={item.to}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 transition hover:bg-purple-50 ${isActive ? 'text-[#6a0dad]' : ''}`}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 transition hover:bg-purple-50 ${isActive ? 'font-semibold' : ''}`}
                   >
                     {item.label}
                     {isActive && <span className="text-xs font-semibold">Active</span>}
@@ -144,7 +139,7 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
                 );
               })}
 
-              {/* Highlighted Buttons (stacked vertically) */}
+              {/* Highlighted buttons */}
               <div className="flex flex-col gap-2 pt-2">
                 {items.filter(item => item.highlighted).map((item) => {
                   if (!item.to) return null;
@@ -161,20 +156,19 @@ const Topbar: React.FC<TopbarProps> = ({ active, variant = 'default' }) => {
                 })}
               </div>
 
-              {/* Login / Dashboard Button */}
+              {/* Login / Dashboard */}
               <div className="flex flex-col gap-2 border-t border-purple-100 pt-4">
                 {user ? (
                   <Link
                     to={ROUTES.DASHBOARD}
                     className="rounded-full border border-[#5A2D82] px-7 py-4 text-center text-sm font-semibold text-[#5A2D82] bg-transparent"
-
                   >
                     Dashboard
                   </Link>
                 ) : (
                   <div
                     onClick={handleAuthClick}
-                    className="rounded-full border border-[#5A2D82] px-7 py-4 text-center text-sm font-semibold text-[#5A2D82] bg-transparent"
+                    className="rounded-full border border-[#5A2D82] px-7 py-4 text-center text-sm font-semibold text-[#5A2D82] bg-transparent cursor-pointer"
                   >
                     Login
                   </div>

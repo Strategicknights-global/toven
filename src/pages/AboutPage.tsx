@@ -161,28 +161,29 @@ const AboutPage: React.FC = () => {
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-purple-200 animate-orbit-reverse animate-glow-pulse text-xl" style={{ animationDelay: '0.5s' }} aria-hidden="true">✺</span>
             </div> */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-zoom-in" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-            About <span className="text-amber-400 animate-text-glow">Toven</span>
+            About Us<span className="text-amber-400 animate-text-glow"></span>
           </h1>
           <p className="text-base sm:text-lg text-purple-100 max-w-2xl mx-auto leading-relaxed animate-slide-in-left" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             India’s First Pre Order Only Food Ecosystem Built for Modern Indian Lifestyles
           </p>
           <div className="mt-10 flex items-center justify-center gap-6 sm:gap-10">
-            <span className="p-3 bg-white/15 rounded-full backdrop-blur">
-              <Clock size={26} />
+            <span className="p-3 bg-white/15 rounded-full backdrop-blur animate-float" style={{ animationDelay: '0s' }}>
+              <Clock size={35} />
             </span>
 
-            <span className="p-3 bg-white/15 rounded-full backdrop-blur">
-              <ChefHat size={26} />
+            <span className="p-3 bg-white/15 rounded-full backdrop-blur animate-float" style={{ animationDelay: '0.3s' }}>
+              <ChefHat size={35} />
             </span>
 
-            <span className="p-3 bg-white/15 rounded-full backdrop-blur">
-              <Truck size={26} />
+            <span className="p-3 bg-white/15 rounded-full backdrop-blur animate-float" style={{ animationDelay: '0.6s' }}>
+              <Truck size={35} />
             </span>
 
-            <span className="p-3 bg-white/15 rounded-full backdrop-blur">
-              <Lunch size={26} />
+            <span className="p-3 bg-white/15 rounded-full backdrop-blur animate-float" style={{ animationDelay: '0.9s' }}>
+              <Lunch size={35} />
             </span>
           </div>
+
 
         </div>
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
@@ -205,15 +206,17 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* WHY WE STARTED */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-6">
 
-          <div className="flex justify-center animate-rotate-in" data-animate>
+          {/* Origin Story Badge */}
+          <div className="flex justify-center animate-rotate-in -mt-4" data-animate>
             <span className="inline-flex items-center gap-2 rounded-full bg-[#510088]/15 text-[#510088] px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] animate-glow-pulse shadow-lg">
               Our Origin Story
             </span>
           </div>
 
+          {/* Title */}
           <div className="text-center">
             <h2
               className="font-semibold text-2xl sm:text-3xl mb-4 animate-zoom-in"
@@ -225,90 +228,62 @@ const AboutPage: React.FC = () => {
             <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-10" />
           </div>
 
-          <p
-            className="text-gray-600 leading-relaxed max-w-3xl mx-auto animate-slide-in-left"
+          {/* Paragraphs */}
+          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto animate-slide-in-left"
             data-animate
-            style={{ animationDelay: "0.15s", animationFillMode: "both" }}
-          >
+            style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
             TOVEN was not born out of a business plan. <br />
             It was born out of a problem we lived every single day. <br /><br />
-            As students and working professionals, we struggled with the same challenges
-            millions of people face:
-
-
-            <ul className="text-gray-600 leading-relaxed max-w-3xl mx-auto space-y-1 list-none animate-slide-in-left"
-              data-animate
-              style={{ animationDelay: "0.18s", animationFillMode: "both" }}>
-              <li>• Skipping meals</li>
-              <li>• Eating unhealthy outside food</li>
-              <li>• Spending too much in restaurants</li>
-              <li>• Missing the comfort of home-cooked meals</li>
-              <li>• Living on instant noodles and skipped dinner</li>
-            </ul>
+            As students and working professionals, we struggled with the same challenges millions of people face:
           </p>
 
-          <p
-            className="text-gray-600 leading-relaxed max-w-3xl mx-auto mt-4 animate-slide-in-left"
+          <ul className="text-gray-600 leading-relaxed max-w-3xl mx-auto space-y-1 list-disc pl-5 animate-slide-in-left"
+              data-animate
+              style={{ animationDelay: "0.18s", animationFillMode: "both" }}>
+            <li>Skipping meals</li>
+            <li>Eating unhealthy outside food</li>
+            <li>Spending too much in restaurants</li>
+            <li>Missing the comfort of home-cooked meals</li>
+            <li>Living on instant noodles and skipped dinner</li>
+          </ul>
+
+          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto mt-4 animate-slide-in-left"
             data-animate
-            style={{ animationDelay: "0.22s", animationFillMode: "both" }}
-          >
+            style={{ animationDelay: "0.22s", animationFillMode: "both" }}>
             “What if good, homely food came to you… every day?” <br />
             That question became TOVEN. <br />
             We started TOVEN to build something more than just a cloud kitchen.
           </p>
-          {/* ⭐ TOVEN IS FOR — #510088 ACCENTED & CENTERED BOXES ⭐ */}
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-[-31px] animate-fade-in"
-            data-animate
-            style={{ animationDelay: "0.3s", animationFillMode: "both" }}
-          >
-            <h2
-              className="font-semibold text-2xl sm:text-3xl mb-4 text-center animate-zoom-in"
-              data-animate
-              style={{ animationDelay: "0.1s", animationFillMode: "both" }}
-            >
+
+          {/* TOVEN is for Title */}
+          <div className="text-center mt-12">
+            <h2 className="font-semibold text-2xl sm:text-3xl mb-4 animate-zoom-in"
+                data-animate
+                style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
               <span className="text-[#510088]">Toven</span> is for
             </h2>
-            <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-17" />
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Students away from home
-              </h3>
-            </div>
+            <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-10" />
+          </div>
 
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Gym goers & fitness-focused individuals
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Working professionals with no time to cook
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Hostellers and PG residents
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Corporate employees
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
-              <h3 className="font-medium text-[#510088] text-base">
-                Elderly people living alone
-              </h3>
-            </div>
+          {/* Grid Items */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            {[
+              "Students away from home",
+              "Gym goers & fitness-focused individuals",
+              "Working professionals with no time to cook",
+              "Hostellers and PG residents",
+              "Corporate employees",
+              "Elderly people living alone",
+            ].map((text, index) => (
+              <div key={index} className="rounded-xl border border-[#510088]/30 bg-[#510088]/5 p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center">
+                <h3 className="font-medium text-[#510088] text-base">{text}</h3>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
+
 
       {/* VISION & MISSION */}
       <section className="py-16 md:py-20 bg-[#F7F7F7]">
@@ -360,7 +335,7 @@ const AboutPage: React.FC = () => {
             <div>
               <div>
                 <h2 className="text-center font-semibold text-2xl sm:text-3xl mb-8 animate-zoom-in" data-animate style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>Why makes us <span className="text-[#510088]">Different</span></h2>
-                <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-15" />
+                <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-13" />
               </div>
               <p className="mt-4 text-base leading-relaxed text-slate-600" data-animate style={{ animationDelay: '0.2s' }}>
                 Not just a meal service – A complete food ecosystem built around your lifestyle
@@ -436,21 +411,39 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* WHAT WE OFFER - PRODUCT CARDS */}
-      <section className="py-1 mt-[-49px] bg-white">
+      <section className="py-6 mt-[-41px] bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10" data-animate>
           <div>
-            <h2 className="text-center font-semibold text-2xl sm:text-3xl mb-4 animate-zoom-in" data-animate style={{ animationDelay: '0.05s', animationFillMode: 'both' }}>What We <span className="text-[#510088]">Offer</span></h2>
-            <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-12" />
-
+            <h2
+              className="text-center font-semibold text-3xl sm:text-4xl mb-6 animate-zoom-in"
+              data-animate
+              style={{ animationDelay: '0.05s', animationFillMode: 'both' }}
+            >
+              What We <span className="text-[#510088]">Offer</span>
+            </h2>
+            <img src="/line.png" alt="Curved underline" className="mx-auto w-40 -mt-12" />
           </div>
-          <div className="relative animate-slide-in-left" data-animate style={{ animationDelay: '0.15s', animationFillMode: 'both' }}>
-            <div className="pointer-events-none absolute inset-0 rounded-3xl border border-purple-100/70" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-3xl">
+
+          <div
+            className="relative animate-slide-in-left w-full"
+            data-animate
+            style={{ animationDelay: '0.15s', animationFillMode: 'both' }}
+          >
+            {/* Border / background */}
+            <div
+              className="pointer-events-none absolute inset-0 rounded-3xl border border-purple-100/70"
+              aria-hidden="true"
+            />
+
+            {/* Enlarged container for cards */}
+            <div className="relative overflow-hidden rounded-5xl min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[900px]">
               <AboutUsCards variant="promoTile" />
             </div>
           </div>
         </div>
       </section>
+
+
 
       <section className="py-2 bg-[#f7f7f7]">
         <div className="max-w-4xl mx-auto px-6 text-left">

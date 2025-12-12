@@ -189,7 +189,7 @@ const ContactPage: React.FC = () => {
               <a
                 href="tel:+919943677277"
                 className="p-4 rounded-full bg-white/20 border border-white/30 backdrop-blur 
-                 hover:bg-white/30 transition-all duration-200 shadow-lg"
+                 hover:bg-white/30 transition-all duration-200 shadow-lg" 
               >
                 <Phone className="w-6 h-6 text-white" />
               </a>
