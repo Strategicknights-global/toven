@@ -375,7 +375,7 @@ const LandingPage: React.FC = () => {
       <Topbar active="home" variant="landing" />
 
       {/* HERO - Swiggy-like layout with left/right images */}
-      <section className="relative bg-[#510088] text-white overflow-hidden flex items-center justify-center pb-24 sm:pb-32" style={{ minHeight: 'calc(100vh - 4rem)', marginTop: '4rem' }}>
+      <section className="relative bg-[#510088] text-white overflow-hidden flex items-center justify-center pb-16 sm:pb-20" style={{ minHeight: 'calc(80vh - 4rem)', marginTop: '4rem' }}>
         {/* Decorative edge images (visible on all sizes, smaller on mobile) */}
         <img
           src="/banner3.png"
@@ -476,7 +476,7 @@ const LandingPage: React.FC = () => {
       {/* PRODUCT CARDS moved into hero */}
 
       {/* OFFERS BANNER */}
-      <section className="bg-[#F7FBF9] py-16 mt-10">
+      <section className="bg-[#F7FBF9] py-16 mt-4">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <h2 className="text-center font-semibold text-2xl sm:text-3xl mt-0 mb-10">

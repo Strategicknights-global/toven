@@ -241,42 +241,57 @@ export default function SubscriptionPage() {
             {cards.map((card) => (
               <article
                 key={card.id}
-                className="grid gap-6 rounded-3xl p-6 sm:p-8 lg:p-10 sm:grid-cols-[1fr_320px]"
+                className="grid gap-4 rounded-3xl p-6 sm:p-8 lg:p-10 bg-white shadow-lg sm:grid-cols-1"
                 style={{ backgroundImage: card.gradient }}
               >
-                <div className="flex flex-col gap-5">
-                  {card.priceLine && (
-                    <span className="inline-flex bg-white/70 px-3 py-1 rounded-full text-[11px] font-semibold">
-                      {card.priceLine}
-                    </span>
-                  )}
-
-                  <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
-
-                  {card.description && (
-                    <p className="text-sm sm:text-base">{card.description}</p>
-                  )}
-
-                  <button
-                    onClick={() => handleOrderNow(card.id)}
-                    className="rounded-full bg-slate-900 px-5 py-2 text-xs text-white font-semibold hover:bg-slate-800"
-                  >
-                    Order Now
-                  </button>
-                </div>
-
-                <div className="relative h-52 rounded-2xl overflow-hidden bg-white/70 sm:h-full">
+                {/* Image first */}
+                <div className="relative h-52 rounded-2xl overflow-hidden bg-white/70">
                   {card.image ? (
-                    <img src={card.image} className="absolute inset-0 w-full h-full object-cover" />
+                    <img
+                      src={card.image}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      alt={card.title}
+                    />
                   ) : (
                     <div className="flex items-center justify-center h-full text-xs text-slate-400">
                       Image not provided
                     </div>
                   )}
                 </div>
+
+                {/* Daily Meal Tag */}
+                {card.priceLine && (
+                  <span className="inline-flex bg-white/70 px-3 py-1 rounded-full text-[11px] font-semibold">
+                    {card.priceLine}
+                  </span>
+                )}
+
+                {/* Title */}
+                <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
+
+                {/* Description */}
+                {card.description && (
+                  <p className="text-sm sm:text-base">{card.description}</p>
+                )}
+
+                {/* Price */}
+                {card.price && (
+                  <span className="text-lg font-semibold text-slate-900">
+                    {card.price}
+                  </span>
+                )}
+
+                {/* Order Now Button */}
+                <button
+                  onClick={() => handleOrderNow(card.id)}
+                  className="rounded-full bg-slate-900 px-5 py-2 text-xs text-white font-semibold hover:bg-slate-800 mt-2"
+                >
+                  Order Now
+                </button>
               </article>
             ))}
           </div>
+
         </section>
       </main>
 

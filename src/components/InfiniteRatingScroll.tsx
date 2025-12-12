@@ -118,13 +118,14 @@ const InfiniteRatingScroll: React.FC<InfiniteRatingScrollProps> = ({ className }
 							{/* Scrollable Content */}
 							<div
 								ref={scrollRef}
-								className="flex gap-6 overflow-x-auto py-2 scrollbar-hide"
+								className="flex flex-nowrap gap-6 sm:animate-marquee overflow-x-auto sm:overflow-hidden scrollbar-hide snap-x snap-mandatory px-2 sm:px-0 py-2"
 								style={{ scrollbarWidth: 'none' }} // Firefox
 							>
+
 								{baseItems.map((item, index) => (
 									<article
 										key={`${item.id}-${index}`}
-										className="min-w-[280px] max-w-sm bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur shadow-[0_20px_45px_rgba(15,23,42,0.45)]"
+										className="snap-start min-w-[80%] sm:min-w-[300px] md:min-w-[340px] lg:min-w-[380px] bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur shadow-[0_20px_45px_rgba(15,23,42,0.45)]"
 									>
 										<div className="flex items-center justify-between gap-4">
 											<div>

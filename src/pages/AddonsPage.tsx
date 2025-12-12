@@ -532,7 +532,7 @@ const AddonsPage: React.FC = () => {
                               key={addon.id}
                               className="w-[88%] sm:w-[48%] md:w-[32%] lg:w-[24%] flex-shrink-0"
                             >
-                              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#d9b8f0] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
 
                                 {/* Image */}
                                 <div
@@ -614,7 +614,7 @@ const AddonsPage: React.FC = () => {
   `}
                                     style={!isActionDisabled ? { backgroundColor: '#510088' } : {}}
                                   >
-                                    {isInCart ? 'Update Cart' : `Add for ${nextDeliveryLabel}`}
+                                    {isInCart ? 'Update Cart' : `Add to cart - ${nextDeliveryLabel}`}
                                   </button>
 
 

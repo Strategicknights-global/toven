@@ -70,7 +70,7 @@ const PartyOrdersPage: React.FC = () => {
         </div>
         <section>
           <div className='py-2'>
-            <h2 className="text-center text-xl sm:text-2xl font-semibold text-gray-900 mb-10">Explore Our <span className="text-[#510088]">Offerings</span></h2>
+            <h2 className="text-center text-xl sm:text-2xl font-semibold text-gray-900 mb-10"><span className="text-[#510088]"></span></h2>
             <img src="/line.png" alt="Curved underline" className="mx-auto w-32 -mt-17" />
 
             <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
